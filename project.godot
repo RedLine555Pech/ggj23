@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="GGJ23"
+run/main_scene="res://src/ui/screens/TobiLogo/TobiLogo.tscn"
+config/icon="res://sprites/icon.png"
+
+[autoload]
+
+TransitionScreen="*res://src/ui/TransitionScreen/TransitionScreen.tscn"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://assets/default_env.tres"
