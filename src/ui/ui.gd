@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 export(NodePath) onready var dialog = get_node(dialog) as Dialog
 export(Array, Resource) var dialogues: Array

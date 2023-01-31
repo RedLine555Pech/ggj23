@@ -47,10 +47,6 @@ window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
-[mono]
-
-project/assembly_name="GGJ23"
-
 [input]
 
 left_click={
@@ -63,6 +59,10 @@ left_click={
 
 2d_physics/layer_1="interaction"
 2d_physics/layer_2="ui_input"
+
+[mono]
+
+project/assembly_name="GGJ23"
 
 [physics]
 
