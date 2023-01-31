@@ -27,12 +27,16 @@ _global_script_class_icons={
 [application]
 
 config/name="GGJ23"
-run/main_scene="res://src/ui/screens/TobiLogo/TobiLogo.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://sprites/icon.png"
 
 [autoload]
 
 TransitionScreen="*res://src/ui/TransitionScreen/TransitionScreen.tscn"
+
+[debug]
+
+shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
 
 [display]
 
@@ -46,6 +50,19 @@ window/stretch/aspect="keep"
 [mono]
 
 project/assembly_name="GGJ23"
+
+[input]
+
+left_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="interaction"
+2d_physics/layer_2="ui_input"
 
 [physics]
 
