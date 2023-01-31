@@ -21,17 +21,11 @@ margin_top = -540.0
 margin_right = 960.0
 margin_bottom = 540.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 960, 483 )
@@ -54,8 +48,5 @@ custom_fonts/font = SubResource( 2 )
 text = "TOBI TORBA GAMES"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

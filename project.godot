@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "VBoxContainer",
+"class": "Dialog",
+"language": "GDScript",
+"path": "res://src/Dialog/Dialog.gd"
+}, {
+"base": "Resource",
+"class": "DialogResource",
+"language": "GDScript",
+"path": "res://src/resources/dialog/dialogResource.gd"
+} ]
+_global_script_class_icons={
+"Dialog": "",
+"DialogResource": ""
+}
+
 [application]
 
 config/name="GGJ23"
@@ -22,9 +38,14 @@ TransitionScreen="*res://src/ui/TransitionScreen/TransitionScreen.tscn"
 
 window/size/width=1920
 window/size/height=1080
-window/size/fullscreen=true
+window/size/test_width=1280
+window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[mono]
+
+project/assembly_name="GGJ23"
 
 [physics]
 
