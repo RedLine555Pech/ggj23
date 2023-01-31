@@ -35,5 +35,5 @@ func clear_buttons() -> void:
 
 
 func choose_option(dialog_id: int, answer_id: int) -> void:
-	emit_signal("choose", dialog_id, answer_id)
 	hide()
+	emit_signal("choose", dialog_id, answer_id)

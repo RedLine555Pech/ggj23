@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/resources/dialog/dialogResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 1
+question = "A you sure first was the egg?"
+answers = [ "Of course", "No, first was chicken" ]

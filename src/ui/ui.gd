@@ -16,6 +16,13 @@ func run_dialog() -> void:
 func choosed(dialog_id: int, answer_id: int) -> void:
 	print("Dialog: " + str(dialog_id) + " Answer: " + str(answer_id))
 	
-	if idx < dialogues.size() - 1:
-		idx += 1
+	if dialog_id == 0:
+		if answer_id == 1:
+			next_dialog()
+	
+
+func next_dialog(step: int = 1) -> void:
+	if idx + step <= dialogues.size() - 1:
+		idx += step
 		run_dialog()
+	
