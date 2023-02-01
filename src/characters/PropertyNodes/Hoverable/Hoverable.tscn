@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/characters/PropertyNodes/Hoverable/Hoverbale.gd" type="Script" id=1]
+
+[node name="Hoverable" type="Area2D"]
+script = ExtResource( 1 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_Hoverable_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Hoverable_mouse_exited"]

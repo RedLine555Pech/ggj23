@@ -1,18 +1,15 @@
-extends Node2D
+extends BaseCharacter
 
-var is_dragging = false;
-var type = "EGG"
-
-func _on_Dragable_on_drag_started() -> void:
+func on_drag_started() -> void:
 	$Sprite.modulate = Color(0,1,0);
-	is_dragging = true;
+	.on_drag_started()
 
 
-func _on_Dragable_on_drag_finished() -> void:
+func on_drag_finished() -> void:
 	$Sprite.modulate = Color(1,1,1);
-	is_dragging = false;
+	.on_drag_finished()
 
 
-func _on_ChickenInteractable_on_interaction(obj) -> void:
-	if is_dragging:
+func on_interaction(obj: BaseCharacter) -> void:
+	if obj.type == "CHICKEN" && is_dragging:
 		queue_free();

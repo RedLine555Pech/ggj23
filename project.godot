@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "BaseCharacter",
+"language": "GDScript",
+"path": "res://src/characters/BaseCharacter.gd"
+}, {
 "base": "VBoxContainer",
 "class": "Dialog",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://src/resources/dialog/dialogResource.gd"
 } ]
 _global_script_class_icons={
+"BaseCharacter": "",
 "Dialog": "",
 "DialogResource": ""
 }
@@ -42,8 +48,7 @@ shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
 
 window/size/width=1920
 window/size/height=1080
-window/size/test_width=1280
-window/size/test_height=720
+window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -59,10 +64,6 @@ left_click={
 
 2d_physics/layer_1="interaction"
 2d_physics/layer_2="ui_input"
-
-[mono]
-
-project/assembly_name="GGJ23"
 
 [physics]
 
