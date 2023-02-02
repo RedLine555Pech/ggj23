@@ -1,4 +1,4 @@
-extends BaseCharacter
+extends BaseMoving
 
 func on_drag_started() -> void:
 	$Sprite.modulate = Color(0,1,0);

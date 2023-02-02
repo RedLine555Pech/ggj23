@@ -9,4 +9,4 @@
 position = Vector2( 800, 338 )
 
 [node name="Egg" parent="." instance=ExtResource( 1 )]
-position = Vector2( 467, 321 )
+position = Vector2( 448, 433 )

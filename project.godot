@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/characters/BaseCharacter.gd"
 }, {
+"base": "BaseCharacter",
+"class": "BaseMoving",
+"language": "GDScript",
+"path": "res://src/characters/BaseMoving.gd"
+}, {
 "base": "VBoxContainer",
 "class": "Dialog",
 "language": "GDScript",
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BaseCharacter": "",
+"BaseMoving": "",
 "Dialog": "",
 "DialogResource": ""
 }
@@ -39,6 +45,7 @@ config/icon="res://sprites/icon.png"
 [autoload]
 
 TransitionScreen="*res://src/ui/TransitionScreen/TransitionScreen.tscn"
+GameManager="*res://src/managers/GameManager.gd"
 
 [debug]
 

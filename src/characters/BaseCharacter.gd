@@ -27,10 +27,11 @@ func followMouse():
 func _process(delta: float) -> void:
 	if is_dragging:
 		followMouse()
-	ai();
+	ai(delta);
 
-func ai():
+func ai(delta: float):
 	pass;
+	
 func on_clicked():
 	pass
 	
