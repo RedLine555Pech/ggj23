@@ -3,6 +3,7 @@ extends Node2D
 class_name BaseCharacter
 
 var is_dragging = false;
+var prev_pos = Vector2.ZERO;
 export var type = "EGG"
 
 func _ready() -> void:
@@ -28,15 +29,26 @@ func _process(delta: float) -> void:
 	if is_dragging:
 		followMouse()
 	ai(delta);
+	rotate_on_drag(delta);
 
 func ai(delta: float):
 	pass;
 	
+func rotate_on_drag(delta: float):
+	if !is_dragging:
+		rotation_degrees = 0;
+		return
+	else:
+		rotation_degrees = 30 * (global_position.x - prev_pos.x) / 30;
+		prev_pos = global_position;
+		
 func on_clicked():
 	pass
 	
 func on_drag_started():
 	is_dragging = true;
+	prev_pos = global_position;
+	
 
 func on_drag_finished():
 	is_dragging = false;	
