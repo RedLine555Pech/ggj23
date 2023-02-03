@@ -8,3 +8,4 @@ collision_mask = 2
 script = ExtResource( 1 )
 
 [connection signal="input_event" from="." to="." method="_on_Clickable_input_event"]
+[connection signal="mouse_exited" from="." to="." method="_on_Clickable_mouse_exited"]
