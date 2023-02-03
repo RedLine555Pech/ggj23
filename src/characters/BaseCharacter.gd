@@ -4,6 +4,7 @@ class_name BaseCharacter
 
 enum STATES {
 	IDLE,
+	CLICKED,
 	DRAGGING
 }
 
@@ -15,6 +16,7 @@ func _ready() -> void:
 	var dragable = get_node_or_null("Dragable")
 	if dragable:
 		dragable.connect("on_drag_started", self, "on_drag_started");
+		dragable.connect("on_dragging", self, "on_dragging");
 		dragable.connect("on_drag_finished", self, "on_drag_finished");
 	var hoverable = get_node_or_null("Hoverable")
 	if hoverable:
@@ -50,18 +52,18 @@ func rotate_on_drag(delta: float):
 		prev_pos = global_position;
 		
 func on_clicked():
+	change_state(STATES.CLICKED)
 	pass
 
 func on_unclicked():
-	if not state == STATES.DRAGGING:
-		on_click()
-	
 	change_state(STATES.IDLE)
-	
+
+
 func on_drag_started():
-	change_state(STATES.DRAGGING)
 	prev_pos = global_position
 	
+func on_dragging():
+	change_state(STATES.DRAGGING)
 
 func on_drag_finished():
 	change_state(STATES.IDLE)
@@ -83,4 +85,7 @@ func on_interaction(obj: BaseCharacter) -> void:
 	pass
 
 func change_state(new_state: int):
+	if state == STATES.CLICKED and new_state == STATES.IDLE:
+		on_click()
+	
 	state = new_state
