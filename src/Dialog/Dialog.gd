@@ -5,6 +5,7 @@ export(PackedScene) var button_scene = preload("res://src/Dialog/dialogButton.ts
 
 onready var label = $Label
 onready var buttons_box = $HBoxContainer
+onready var animations = $AnimationPlayer
 
 signal choose(dialog_id, answer_id)
 
@@ -17,6 +18,7 @@ func start_dialog(dialog: DialogResource):
 	generate_buttons(dialog.answers, dialog.id)
 	
 	show()
+	animations.play("fade_in")
 
 
 func generate_buttons(answers: Array, dialog_id: int) -> void:
@@ -35,5 +37,12 @@ func clear_buttons() -> void:
 
 
 func choose_option(dialog_id: int, answer_id: int) -> void:
-	hide()
+	animations.play("fade_out")
+	yield(animations, "animation_finished")
 	emit_signal("choose", dialog_id, answer_id)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+	match anim_name:
+		"fade_out":
+			hide()
