@@ -4,12 +4,10 @@ class_name BaseCharacter
 
 enum STATES {
 	IDLE,
-	START_DRAGGING,
 	DRAGGING
 }
 
 var state: int = STATES.IDLE;
-var drag_sensitivity := 1
 var prev_pos := Vector2.ZERO;
 export(GE.OBJS) var type := GE.OBJS.EGG
 
@@ -33,10 +31,6 @@ func _ready() -> void:
 func followMouse():
 	global_position = get_global_mouse_position();
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and state == STATES.START_DRAGGING:
-		if event.relative.length() > drag_sensitivity:
-			change_state(STATES.DRAGGING)
 
 func _process(delta: float) -> void:
 	if state == STATES.DRAGGING:
@@ -59,10 +53,13 @@ func on_clicked():
 	pass
 
 func on_unclicked():
+	if not state == STATES.DRAGGING:
+		on_click()
+	
 	change_state(STATES.IDLE)
 	
 func on_drag_started():
-	change_state(STATES.START_DRAGGING)
+	change_state(STATES.DRAGGING)
 	prev_pos = global_position
 	
 
@@ -71,7 +68,7 @@ func on_drag_finished():
 
 
 func on_click():
-	print("Real click")
+	print("Click")
 	pass
 
 
@@ -86,7 +83,4 @@ func on_interaction(obj: BaseCharacter) -> void:
 	pass
 
 func change_state(new_state: int):
-	if state == STATES.START_DRAGGING and new_state == STATES.IDLE:
-		on_click()
-	
 	state = new_state
