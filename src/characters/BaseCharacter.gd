@@ -51,7 +51,7 @@ func on_drag_started():
 	
 
 func on_drag_finished():
-	is_dragging = false;	
+	is_dragging = false;
 
 
 func on_click():

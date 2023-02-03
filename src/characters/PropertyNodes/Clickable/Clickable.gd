@@ -15,3 +15,8 @@ func _on_Clickable_input_event(viewport: Node, event: InputEvent, shape_idx: int
 	elif left_clicked && event is InputEventMouseMotion:
 		mouse_moved = true;
 		
+
+
+func _on_Clickable_mouse_exited() -> void:
+	mouse_moved = false;
+	left_clicked = false;

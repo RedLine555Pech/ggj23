@@ -18,4 +18,10 @@ func _on_Dragable_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 		emit_signal("on_drag_finished")
 	elif event is InputEventMouseButton && event.is_action_released("left_click"):
 		left_clicked = false;
-		
+
+
+func _on_Dragable_mouse_exited() -> void:
+	if mouse_moved: return
+	
+	mouse_moved = false;
+	left_clicked = false;
