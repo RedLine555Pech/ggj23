@@ -5,12 +5,14 @@ class_name BaseMoving
 export var speed:= 100;
 export var idle_time:= 2.0;
 
-var can_move = true;
+var can_move = false;
 var target_point = Vector2.ZERO;
 
 func _ready() -> void:
-	new_target_point();
 	$IdleTimer.wait_time = idle_time;
+	$IdleTimer.start();
+	on_stop();
+	
 
 func ai(delta: float):
 	if !can_move || !is_active:

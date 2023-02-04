@@ -1,15 +1,21 @@
 extends BaseCharacter
 
 export var on_tree: bool = false
+export var damage_over_time = true;
 export var health: int = 3
 export var spawn: PackedScene
+
+func _ready() -> void:
+	if !on_tree && damage_over_time:
+		$DamageTimer.start();
 
 func on_drag_started() -> void:
 	if !is_active: return
 	if on_tree:
 		$AnimationPlayer.play("shake");
 		return
-	$Sprite.modulate = Color(0,1,0);
+	elif damage_over_time:
+		$DamageTimer.stop();
 	.on_drag_started()
 
 
@@ -18,7 +24,8 @@ func on_drag_finished() -> void:
 	if on_tree:
 		$AnimationPlayer.play("shake");
 		return
-	$Sprite.modulate = Color(1,1,1);
+	elif damage_over_time:
+		$DamageTimer.start();
 	.on_drag_finished()
 
 
@@ -32,7 +39,8 @@ func on_clicked():
 	if on_tree:
 		$AnimationPlayer.play("shake");
 		return		
-	
+	elif damage_over_time:
+		$DamageTimer.start();
 	.on_clicked()
 	damage()
 
@@ -51,6 +59,8 @@ func fall():
 		
 	yield(tween, "finished")
 	damage()
+	if damage_over_time:
+		$DamageTimer.start();
 
 
 func damage():
@@ -82,3 +92,8 @@ func kill():
 	
 	queue_free()
 	
+
+
+func _on_DamageTimer_timeout() -> void:
+	if is_active:
+		damage()
