@@ -6,7 +6,7 @@ const ACHIEVEMENT_JSON_REFERENCE_PATH = "res://gd-achievements/achievements.json
 var achievements = {}
 var achievementCount = 0
 
-signal achievement_unlocked(achievement)
+signal achievement_unlocked(achievement, key)
 
 
 func _ready():
@@ -136,4 +136,4 @@ func activate_achievement(key):
 		achievements[key]["achieved"] = true
 		rewrite_achievements_data_to_user_json()
 
-		emit_signal("achievement_unlocked", currentAchievement)
+		emit_signal("achievement_unlocked", currentAchievement, key)

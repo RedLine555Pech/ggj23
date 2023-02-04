@@ -9,6 +9,9 @@ func _ready() -> void:
 	dialog.connect("choose", self, "choosed")
 	
 	AchievementManager.reset_achievements()
+	
+	yield(get_tree().create_timer(1), "timeout")
+	
 	AchievementManager.unlock_achievement(Achievements.NAME.INSTANT)
 	
 #	run_dialog()

@@ -49,7 +49,7 @@ func _ready():
 	margin_right = 0
 
 
-func create_achievement_panel(achievement):
+func create_achievement_panel(achievement, key):
 	print("AchievementSystem: Show achievement '" + achievement["name"] + "'")
 
 	var notification_instance = achievement_notification.instance()

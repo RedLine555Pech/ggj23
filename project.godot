@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "PanelContainer",
+"class": "AchievementItem",
+"language": "GDScript",
+"path": "res://gd-achievements/Achievement/Achievement.gd"
+}, {
 "base": "Node",
 "class": "Achievements",
 "language": "GDScript",
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://src/resources/dialog/dialogResource.gd"
 } ]
 _global_script_class_icons={
+"AchievementItem": "",
 "Achievements": "",
 "BaseCharacter": "",
 "BaseMoving": "",

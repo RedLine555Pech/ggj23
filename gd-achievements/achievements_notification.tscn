@@ -1,31 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://gd-achievements/achievements_notification.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/AmaticSC-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://addons/gd-achievements/resources/icons/achievement_test.png" type="Texture" id=4]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 1, 1, 0.980392 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.121569, 0.121569, 0.121569, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="DynamicFont" id=4]
-size = 30
-extra_spacing_char = 1
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 25
-extra_spacing_char = 1
-font_data = ExtResource( 2 )
+[ext_resource path="res://gd-achievements/Achievement/Achievement.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=2]
 resource_name = "hide"
@@ -76,11 +52,7 @@ tracks/1/keys = {
 margin_right = 443.0
 margin_bottom = 147.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-description = NodePath("achievementPanel/PanelContainer/MarginContainer/HBoxContainer/achievementDescription/description")
-texture_rect = NodePath("achievementPanel/PanelContainer/MarginContainer/HBoxContainer/achievementIcon/TextureRect")
+achievement_box = NodePath("achievementPanel/Achievement")
 
 [node name="achievementPanel" type="Control" parent="."]
 anchor_right = 1.0
@@ -91,72 +63,11 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="PanelContainer" type="PanelContainer" parent="achievementPanel"]
-margin_left = 30.0
-margin_top = 15.0
-margin_right = 396.0
-margin_bottom = 131.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="MarginContainer" type="MarginContainer" parent="achievementPanel/PanelContainer"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 364.0
-margin_bottom = 114.0
-custom_constants/margin_right = 15
-custom_constants/margin_top = 15
-custom_constants/margin_left = 15
-custom_constants/margin_bottom = 15
-
-[node name="HBoxContainer" type="HBoxContainer" parent="achievementPanel/PanelContainer/MarginContainer"]
-margin_left = 15.0
-margin_top = 15.0
-margin_right = 347.0
-margin_bottom = 97.0
-custom_constants/separation = 15
-alignment = 1
-
-[node name="achievementIcon" type="MarginContainer" parent="achievementPanel/PanelContainer/MarginContainer/HBoxContainer"]
-margin_top = 9.0
-margin_right = 64.0
-margin_bottom = 73.0
-size_flags_vertical = 4
-
-[node name="TextureRect" type="TextureRect" parent="achievementPanel/PanelContainer/MarginContainer/HBoxContainer/achievementIcon"]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-texture = ExtResource( 4 )
-expand = true
-
-[node name="achievementDescription" type="VBoxContainer" parent="achievementPanel/PanelContainer/MarginContainer/HBoxContainer"]
-margin_left = 79.0
-margin_right = 332.0
-margin_bottom = 82.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="mainTitle" type="Label" parent="achievementPanel/PanelContainer/MarginContainer/HBoxContainer/achievementDescription"]
-margin_right = 253.0
-margin_bottom = 39.0
-size_flags_vertical = 1
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 4 )
-text = "Achievement Unlocked!"
-align = 1
-valign = 1
-
-[node name="description" type="Label" parent="achievementPanel/PanelContainer/MarginContainer/HBoxContainer/achievementDescription"]
-margin_top = 43.0
-margin_right = 253.0
-margin_bottom = 76.0
-size_flags_vertical = 2
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "My instant achievemnt"
-align = 1
-valign = 1
-autowrap = true
+[node name="Achievement" parent="achievementPanel" instance=ExtResource( 5 )]
+margin_left = 32.0
+margin_top = 18.0
+margin_right = 382.0
+margin_bottom = 128.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/hide = SubResource( 2 )

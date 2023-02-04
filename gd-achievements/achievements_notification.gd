@@ -1,14 +1,11 @@
 extends Control
 
-
-export(NodePath) onready var description = get_node(description) as Label
-export(NodePath) onready var texture_rect = get_node(texture_rect) as TextureRect
+export(NodePath) onready var achievement_box = get_node(achievement_box) as AchievementItem
 
 onready var animation_player = $AnimationPlayer
 
 func set_achievement(achievement):
-	description.text = achievement["name"]
-	texture_rect.texture = load(achievement["icon_path"])
+	achievement_box.set_data("Achievement Unlocked!", achievement["name"], load(achievement["icon_path"]))
 
 
 func on_show():
