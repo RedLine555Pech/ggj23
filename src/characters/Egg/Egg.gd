@@ -5,13 +5,19 @@ export var health: int = 3
 export var spawn: PackedScene
 
 func on_drag_started() -> void:
-	if on_tree || !is_active: return
+	if !is_active: return
+	if on_tree:
+		$AnimationPlayer.play("shake");
+		return
 	$Sprite.modulate = Color(0,1,0);
 	.on_drag_started()
 
 
 func on_drag_finished() -> void:
-	if on_tree ||  !is_active: return
+	if !is_active: return
+	if on_tree:
+		$AnimationPlayer.play("shake");
+		return
 	$Sprite.modulate = Color(1,1,1);
 	.on_drag_finished()
 
@@ -21,7 +27,10 @@ func on_interaction(obj: BaseCharacter) -> void:
 		queue_free();
 
 func on_clicked():
-	if on_tree || !is_active: return
+	if !is_active: return
+	if on_tree:
+		$AnimationPlayer.play("shake");
+		return		
 	
 	.on_clicked()
 	damage()
