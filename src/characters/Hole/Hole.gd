@@ -10,6 +10,7 @@ func on_interaction(obj: BaseCharacter) -> void:
 		call_deferred('push_in_hole', self, obj);
 	
 func push_in_hole(hole, obj):
+	GameManager.DRAGGING_OBJECT = false;
 	obj.on_drag_finished();
 	obj.is_active = false;
 	obj.get_parent().remove_child(obj);

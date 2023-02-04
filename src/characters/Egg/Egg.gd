@@ -23,7 +23,8 @@ func on_drag_finished() -> void:
 
 
 func on_interaction(obj: BaseCharacter) -> void:
-	if is_active && obj.is_active && obj.type == GE.OBJS.CHICKEN && is_dragging:
+	if is_active && obj.is_active && (obj.type == GE.OBJS.DUCK || obj.type == GE.OBJS.CHICKEN) && is_dragging:
+		GameManager.DRAGGING_OBJECT = false;
 		queue_free();
 
 func on_clicked():

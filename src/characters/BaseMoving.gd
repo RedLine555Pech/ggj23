@@ -18,13 +18,16 @@ func ai(delta: float):
 	if target_point == self.global_position:
 		scale.x = 1;		
 		$IdleTimer.start();
+		on_stop();
 		can_move = false;
-	var move_vec = target_point - self.global_position;
-	var move_vec_delta = move_vec.normalized() * speed * delta;
-	if move_vec.length() <= move_vec_delta.length():
-		self.global_position += move_vec;
 	else:
-		self.global_position += move_vec_delta
+		on_move();
+		var move_vec = target_point - self.global_position;
+		var move_vec_delta = move_vec.normalized() * speed * delta;
+		if move_vec.length() <= move_vec_delta.length():
+			self.global_position += move_vec;
+		else:
+			self.global_position += move_vec_delta
 	
 func new_target_point():
 	var x = ((randi() % (GameManager.RIGHT_BORDER - GameManager.LEFT_BORDER)) + GameManager.LEFT_BORDER);
@@ -49,3 +52,8 @@ func _on_IdleTimer_timeout() -> void:
 	new_target_point();
 	can_move = true;
 	
+func on_stop():
+	pass
+	
+func on_move():
+	pass
