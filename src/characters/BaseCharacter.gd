@@ -4,7 +4,7 @@ class_name BaseCharacter
 
 var is_dragging = false;
 var prev_pos = Vector2.ZERO;
-export var type = "EGG"
+export(GE.OBJS) var type := GE.OBJS.EGG
 
 func _ready() -> void:
 	var dragable = get_node_or_null("Dragable")

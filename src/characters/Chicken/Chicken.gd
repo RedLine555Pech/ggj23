@@ -9,7 +9,9 @@ func on_drag_finished() -> void:
 	.on_drag_finished()
 
 func on_interaction(obj: BaseCharacter) -> void:
-	if obj.type == "EGG" && !is_dragging:
+	GE.obj_print(obj.type)
+	print(is_dragging)
+	if obj.type == GE.OBJS.EGG && !is_dragging:
 		$Sprite.modulate = Color(0,0,0);
 		
 func on_clicked():
