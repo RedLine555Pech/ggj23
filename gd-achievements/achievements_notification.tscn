@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://gd-achievements/achievements_notification.gd" type="Script" id=1]
+[ext_resource path="res://gd-achievements/Achievement/Achievement.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=2]
+resource_name = "hide"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("achievementPanel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.423985, 66.8042, 520, -0.426136, 37.7292, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("achievementPanel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.42, 107.007, 18.042, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.7 )
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("achievementPanel:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 520, -0.25, 0, 0.345922, 19.7211, 0, -0.3, -43.5181, 0.2, 34.6069 ),
+"times": PoolRealArray( 0, 0.6 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("achievementPanel:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.204192, -209.058 ),
+"times": PoolRealArray( 0, 0.9 )
+}
+
+[node name="root" type="Control"]
+margin_right = 443.0
+margin_bottom = 147.0
+script = ExtResource( 1 )
+achievement_box = NodePath("achievementPanel/Achievement")
+
+[node name="achievementPanel" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 520.0
+margin_right = 519.992
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Achievement" parent="achievementPanel" instance=ExtResource( 5 )]
+margin_left = 32.0
+margin_top = 18.0
+margin_right = 382.0
+margin_bottom = 128.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hide = SubResource( 2 )
+anims/popup = SubResource( 3 )
