@@ -17,6 +17,8 @@ func on_clicked():
 	
 	can_click = false
 	
+	$AnimationPlayer.play("shake");
+	
 	if clicked < eggs.size() && eggs[clicked].has_method("fall"):
 		eggs[clicked].fall()
 	

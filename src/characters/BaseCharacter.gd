@@ -3,6 +3,7 @@ extends Node2D
 class_name BaseCharacter
 
 var is_dragging = false;
+var is_active = true;
 var prev_pos = Vector2.ZERO;
 export(GE.OBJS) var type := GE.OBJS.EGG
 

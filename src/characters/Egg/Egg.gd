@@ -1,52 +1,56 @@
 extends BaseCharacter
 
 export var on_tree: bool = false
-export var breakable: bool = false
 export var health: int = 3
 export var spawn: PackedScene
 
 func on_drag_started() -> void:
+	if on_tree || !is_active: return
 	$Sprite.modulate = Color(0,1,0);
 	.on_drag_started()
 
 
 func on_drag_finished() -> void:
+	if on_tree ||  !is_active: return
 	$Sprite.modulate = Color(1,1,1);
 	.on_drag_finished()
 
 
 func on_interaction(obj: BaseCharacter) -> void:
-	if obj.type == GE.OBJS.CHICKEN && is_dragging:
+	if is_active && obj.is_active && obj.type == GE.OBJS.CHICKEN && is_dragging:
 		queue_free();
 
 func on_clicked():
-	if on_tree: return
+	if on_tree || !is_active: return
 	
 	.on_clicked()
 	damage()
 
 
 func fall():
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(0.2), "timeout")
 	on_tree = false
 	
-	if breakable:
-		kill()
-	else:
-		damage()
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "global_position", global_position + Vector2(0, 600+randf()*200), 0.5)
+		
+	yield(tween, "finished")
+	damage()
 
 
 func damage():
 	health = clamp(health - 1, 0, health)
 	print("Damaged" + str(health))
-	
+	$Sprite.frame += 1;
+	$AnimationPlayer.play("shake");
 	if health <= 0:
 		kill()
 
 
 func kill():
 	print("Killed")
-	
+	is_active = false;
+	$Sprite.frame = 4;	
 	if spawn:
 		var obj: Node2D = spawn.instance()
 		obj.scale = Vector2.ZERO
@@ -57,6 +61,9 @@ func kill():
 		tween.tween_property(obj, "scale", Vector2(1, 1), 0.5)
 		
 		yield(tween, "finished")
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate", Color(1,1,1,0), 0.5)
+	yield(tween, "finished")
 	
 	queue_free()
 	
