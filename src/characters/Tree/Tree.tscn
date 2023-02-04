@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/characters/PropertyNodes/Clickable/Clickable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/objects/tree.png" type="Texture" id=2]
 [ext_resource path="res://src/characters/Tree/Tree.gd" type="Script" id=3]
+[ext_resource path="res://src/characters/PropertyNodes/Hoverable/Hoverable.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 68.0
@@ -48,6 +49,14 @@ position = Vector2( -1, 0 )
 z_index = -2500
 texture = ExtResource( 2 )
 centered = false
+
+[node name="Hoverable" parent="." instance=ExtResource( 4 )]
+position = Vector2( 75, 367 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hoverable"]
+shape = SubResource( 1 )
 
 [node name="Clickable" parent="." instance=ExtResource( 1 )]
 position = Vector2( 75, 367 )

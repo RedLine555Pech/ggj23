@@ -38,6 +38,11 @@ func on_clicked():
 
 
 func fall():
+	var g_pos = global_position;
+	var world = get_parent().get_parent();
+	get_parent().remove_child(self);
+	world.add_child(self);
+	self.position = g_pos;
 	yield(get_tree().create_timer(0.2), "timeout")
 	on_tree = false
 	

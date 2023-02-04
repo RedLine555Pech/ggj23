@@ -3,6 +3,8 @@
 [ext_resource path="res://src/characters/PropertyNodes/Hoverable/Hoverbale.gd" type="Script" id=1]
 
 [node name="Hoverable" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 1 )
 
 [connection signal="mouse_entered" from="." to="." method="_on_Hoverable_mouse_entered"]

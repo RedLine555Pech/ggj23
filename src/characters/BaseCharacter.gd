@@ -60,11 +60,11 @@ func on_click():
 
 
 func on_hover_started():
-	pass
+	modulate = Color(1, 1, 0.7, 1)
 
 
 func on_hover_finished():
-	pass
+	modulate = Color(1, 1, 1, 1)
 
 func on_interaction(obj: BaseCharacter) -> void:
 	pass
