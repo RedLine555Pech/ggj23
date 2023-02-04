@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/managers/AudioManager/AudioManager.gd" type="Script" id=1]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AudioStreams" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer13" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer14" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer15" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer16" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer17" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer18" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer19" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer20" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer21" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer22" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer23" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer24" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer25" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer26" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer27" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0
+
+[node name="AudioStreamPlayer28" type="AudioStreamPlayer" parent="AudioStreams"]
+volume_db = -5.0

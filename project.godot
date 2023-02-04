@@ -47,6 +47,8 @@ config/icon="res://sprites/icon.png"
 TransitionScreen="*res://src/ui/TransitionScreen/TransitionScreen.tscn"
 GameManager="*res://src/managers/GameManager.gd"
 GE="*res://src/managers/GlobalEnums.gd"
+AudioManager="*res://src/managers/AudioManager/AudioManager.tscn"
+MusicManager="*res://src/managers/MusicManager/MusicManager.tscn"
 
 [debug]
 
