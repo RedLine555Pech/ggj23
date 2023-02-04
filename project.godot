@@ -47,6 +47,7 @@ config/icon="res://sprites/icon.png"
 TransitionScreen="*res://src/ui/TransitionScreen/TransitionScreen.tscn"
 GameManager="*res://src/managers/GameManager.gd"
 GE="*res://src/managers/GlobalEnums.gd"
+Achievements="*res://src/Achiements/Achievements.gd"
 
 [debug]
 

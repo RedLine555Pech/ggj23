@@ -8,7 +8,9 @@ var idx: int = 0
 func _ready() -> void:
 	dialog.connect("choose", self, "choosed")
 	
-	run_dialog()
+	Achievements.collect(Achievements.TEST)
+	
+#	run_dialog()
 
 func run_dialog() -> void:
 	dialog.start_dialog(dialogues[idx])
