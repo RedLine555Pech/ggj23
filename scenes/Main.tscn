@@ -8,6 +8,8 @@
 
 [node name="Chicken" parent="." instance=ExtResource( 2 )]
 position = Vector2( 800, 338 )
+speed = null
+idle_time = null
 
 [node name="Tree" parent="." instance=ExtResource( 3 )]
 position = Vector2( 85, 346 )

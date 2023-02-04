@@ -16,7 +16,7 @@ func on_drag_finished() -> void:
 
 
 func on_interaction(obj: BaseCharacter) -> void:
-	if obj.type == "CHICKEN" && is_dragging:
+	if obj.type == GE.OBJS.CHICKEN && is_dragging:
 		queue_free();
 
 func on_clicked():
