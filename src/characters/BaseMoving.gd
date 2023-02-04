@@ -13,7 +13,7 @@ func _ready() -> void:
 	$IdleTimer.wait_time = idle_time;
 
 func ai(delta: float):
-	if !can_move:
+	if !can_move || !is_active:
 		return
 	if target_point == self.global_position:
 		scale.x = 1;		

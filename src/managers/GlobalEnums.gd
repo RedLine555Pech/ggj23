@@ -2,7 +2,9 @@ extends Node
 
 enum OBJS {
 	EGG,
-	CHICKEN
+	CHICKEN,
+	DUCK,
+	HOLE
 }
 
 func obj_print(enum_value: int) -> void:

@@ -19,10 +19,11 @@ script = ExtResource( 3 )
 type = "DUCK"
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
 texture = ExtResource( 2 )
 hframes = 6
 vframes = 5
-frame = 10
+frame = 28
 script = ExtResource( 6 )
 
 [node name="Hoverable" parent="." instance=ExtResource( 5 )]
