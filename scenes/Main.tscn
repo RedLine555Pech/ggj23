@@ -11,9 +11,12 @@
 
 [node name="Chicken" parent="." instance=ExtResource( 2 )]
 position = Vector2( 800, 338 )
+speed = null
+idle_time = null
 
 [node name="Egg" parent="." instance=ExtResource( 1 )]
 position = Vector2( 448, 433 )
+type = null
 
 [node name="Duck" parent="." instance=ExtResource( 4 )]
 position = Vector2( 984, 494 )
