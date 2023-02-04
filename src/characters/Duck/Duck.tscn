@@ -14,13 +14,15 @@ radius = 30.1496
 radius = 18.4391
 
 [node name="Duck" type="Node2D"]
+position = Vector2( -1, -1 )
 script = ExtResource( 3 )
 type = "DUCK"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 6
-vframes = 6
+vframes = 5
+frame = 10
 script = ExtResource( 6 )
 
 [node name="Hoverable" parent="." instance=ExtResource( 5 )]

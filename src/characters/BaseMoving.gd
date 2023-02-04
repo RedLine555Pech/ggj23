@@ -3,7 +3,7 @@ extends BaseCharacter
 class_name BaseMoving
 
 export var speed:= 100;
-export var idle_time:= 2;
+export var idle_time:= 2.0;
 
 var can_move = true;
 var target_point = Vector2.ZERO;

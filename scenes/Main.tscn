@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/characters/Egg/Egg.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/characters/Chicken/Chicken.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/characters/Tree/Tree.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sprites/bg/net.jpg" type="Texture" id=4]
+[ext_resource path="res://src/characters/Fly/Fly.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
+
+[node name="Fly" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1031, 616 )
 
 [node name="Chicken" parent="." instance=ExtResource( 2 )]
 position = Vector2( 800, 338 )
@@ -14,17 +18,17 @@ position = Vector2( 800, 338 )
 path_eggs = [ NodePath("Egg"), NodePath("Egg2"), NodePath("Egg3") ]
 
 [node name="Egg" parent="Tree" instance=ExtResource( 1 )]
-position = Vector2( 227, 135 )
+position = Vector2( 232, 153 )
 on_tree = true
 health = 1
 
 [node name="Egg2" parent="Tree" instance=ExtResource( 1 )]
-position = Vector2( 695, 142 )
+position = Vector2( 675, 171 )
 on_tree = true
 health = 1
 
 [node name="Egg3" parent="Tree" instance=ExtResource( 1 )]
-position = Vector2( 496, 192 )
+position = Vector2( 479, 204 )
 on_tree = true
 health = 4
 spawn = ExtResource( 2 )
