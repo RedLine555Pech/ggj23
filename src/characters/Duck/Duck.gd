@@ -27,6 +27,7 @@ func on_interaction(obj: BaseCharacter) -> void:
 		
 		
 func on_hover_started():
+	.on_hover_started()
 	if !is_active || GameManager.DRAGGING_OBJECT:
 		return
 	if !is_dragging:
@@ -36,6 +37,7 @@ func on_hover_started():
 
 
 func on_hover_finished():
+	.on_hover_finished()
 	if !is_active || GameManager.DRAGGING_OBJECT:
 		return
 	if !is_dragging:

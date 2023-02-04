@@ -47,7 +47,7 @@ func fall():
 	on_tree = false
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "global_position", global_position + Vector2(0, 600+randf()*200), 0.5)
+	tween.tween_property(self, "global_position", global_position + Vector2(0, 500+randf()*200), 0.5)
 		
 	yield(tween, "finished")
 	damage()
@@ -68,7 +68,7 @@ func kill():
 	$Sprite.frame = 4;	
 	if spawn:
 		var obj: Node2D = spawn.instance()
-		obj.scale = Vector2.ZERO
+		obj.scale = Vector2(0.2, 0.2);
 		obj.position = position
 		get_parent().add_child(obj)
 		
