@@ -12,5 +12,9 @@ func on_interaction(obj: BaseCharacter) -> void:
 	if obj.type == "EGG" && !is_dragging:
 		$Sprite.modulate = Color(0,0,0);
 		
-func on_clicked():
+func on_hover_started():
 	$Sprite.modulate = Color(0,0,1);
+
+
+func on_hover_finished():
+	$Sprite.modulate = Color(1,1,1);

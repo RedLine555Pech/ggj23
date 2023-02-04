@@ -16,6 +16,7 @@ func ai(delta: float):
 	if !can_move:
 		return
 	if target_point == self.global_position:
+		scale.x = 1;		
 		$IdleTimer.start();
 		can_move = false;
 	var move_vec = target_point - self.global_position;
@@ -29,6 +30,10 @@ func new_target_point():
 	var x = ((randi() % (GameManager.RIGHT_BORDER - GameManager.LEFT_BORDER)) + GameManager.LEFT_BORDER);
 	var y = ((randi() % (GameManager.BOTTOM_BORDER - GameManager.TOP_BORDER)) + GameManager.TOP_BORDER);
 	target_point = Vector2(x, y)
+	if target_point.x < global_position.x:
+		scale.x = -1
+	else:
+		scale.x = 1;
 	
 func on_drag_started() -> void:
 	can_move = false;

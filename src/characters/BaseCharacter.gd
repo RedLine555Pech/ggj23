@@ -65,5 +65,5 @@ func on_hover_started():
 func on_hover_finished():
 	pass
 
-func on_interaction(obj: BaseCharacter):
+func on_interaction(obj: BaseCharacter) -> void:
 	pass
