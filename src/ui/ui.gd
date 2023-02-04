@@ -8,7 +8,10 @@ var idx: int = 0
 func _ready() -> void:
 	dialog.connect("choose", self, "choosed")
 	
-	run_dialog()
+	AchievementManager.reset_achievements()
+	AchievementManager.unlock_achievement(Achievements.NAME.INSTANT)
+	
+#	run_dialog()
 
 func run_dialog() -> void:
 	dialog.start_dialog(dialogues[idx])

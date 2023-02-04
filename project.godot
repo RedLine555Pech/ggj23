@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Achievements",
+"language": "GDScript",
+"path": "res://gd-achievements/Achievements.gd"
+}, {
 "base": "Node2D",
 "class": "BaseCharacter",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://src/resources/dialog/dialogResource.gd"
 } ]
 _global_script_class_icons={
+"Achievements": "",
 "BaseCharacter": "",
 "BaseMoving": "",
 "Dialog": "",
@@ -47,6 +53,7 @@ config/icon="res://sprites/icon.png"
 TransitionScreen="*res://src/ui/TransitionScreen/TransitionScreen.tscn"
 GameManager="*res://src/managers/GameManager.gd"
 GE="*res://src/managers/GlobalEnums.gd"
+AchievementManager="*res://addons/gd-achievements/scripts/achievement_manager.gd"
 
 [debug]
 
@@ -59,6 +66,10 @@ window/size/height=1080
 window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/gd-achievements/plugin.cfg" )
 
 [input]
 
