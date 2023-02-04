@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/ui/screens/TobiLogo/TobiLogoScript.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/justabit.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Ubuntu-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://sprites/logo/Tobi_Torba_Games_logo.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
