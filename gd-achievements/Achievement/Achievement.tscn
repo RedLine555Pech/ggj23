@@ -24,6 +24,8 @@ script = ExtResource( 4 )
 title_box = NodePath("MarginContainer/HBoxContainer/achievementDescription/mainTitle")
 description_box = NodePath("MarginContainer/HBoxContainer/achievementDescription/description")
 texture_rect = NodePath("MarginContainer/HBoxContainer/achievementIcon/TextureRect")
+lock_modulate = Color( 0.537255, 0.537255, 0.537255, 1 )
+unlock_modulate = Color( 1, 1, 1, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 2.0
