@@ -45,10 +45,10 @@ position = Vector2( 0, -28 )
 shape = SubResource( 1 )
 
 [node name="Fly" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1031, 616 )
+position = Vector2( 1032, 611 )
 
 [node name="Duck" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1212, 524 )
+position = Vector2( 1179, 621 )
 
 [node name="Chicken" parent="." instance=ExtResource( 2 )]
 position = Vector2( 695, 538 )

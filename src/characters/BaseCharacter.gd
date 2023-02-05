@@ -24,7 +24,8 @@ func _ready() -> void:
 		clickable.connect("on_clicked", self, "on_clicked");
 		
 func followMouse():
-	global_position = get_global_mouse_position();
+	global_position.x = clamp(get_global_mouse_position().x, GameManager.LEFT_BORDER, GameManager.RIGHT_BORDER);
+	global_position.y = clamp(get_global_mouse_position().y, GameManager.TOP_BORDER, GameManager.BOTTOM_BORDER);
 
 func _process(delta: float) -> void:
 	if is_dragging:

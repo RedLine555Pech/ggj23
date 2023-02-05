@@ -21,6 +21,13 @@ func _on_Dragable_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 	elif event is InputEventMouseButton && event.is_action_released("left_click"):
 		left_clicked = false;
 
+func _unhandled_input(event: InputEvent) -> void:
+	if left_clicked && mouse_moved && event is InputEventMouseButton && event.is_action_released("left_click"):
+		left_clicked = false;
+		GameManager.DRAGGING_OBJECT = false
+		emit_signal("on_drag_finished")
+	elif event is InputEventMouseButton && event.is_action_released("left_click"):
+		left_clicked = false;
 
 func _on_Dragable_mouse_exited() -> void:
 	if mouse_moved: return
