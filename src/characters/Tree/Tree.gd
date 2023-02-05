@@ -17,6 +17,7 @@ func on_clicked():
 	
 	can_click = false
 	
+	AudioManager.play_sound("TreeShake")
 	$AnimationPlayer.play("shake");
 	
 	if clicked < eggs.size() && eggs[clicked].has_method("fall"):
