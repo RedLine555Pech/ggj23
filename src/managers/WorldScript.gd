@@ -8,3 +8,11 @@ func _ready() -> void:
 	GameManager.spawn('BlackHole', Vector2(90, 250), false)
 	GameManager.emit_signal('blackhole_spawned', Vector2(90, 250));
 	
+
+func _input(event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_Q):
+		get_tree().quit()
+
+
+func _on_Button_pressed() -> void:
+	get_tree().quit()

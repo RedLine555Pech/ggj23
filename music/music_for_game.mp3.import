@@ -12,4 +12,4 @@ dest_files=[ "res://.import/music_for_game.mp3-cdf24e85f5a61eb4a539e7006c2277d8.
 [params]
 
 loop=true
-loop_offset=0
+loop_offset=9.25
