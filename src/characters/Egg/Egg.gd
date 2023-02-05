@@ -3,7 +3,7 @@ extends BaseCharacter
 export var on_tree: bool = false
 export var damage_over_time = true;
 export var health: int = 3
-export var spawn: PackedScene
+export var spawn: String
 
 func _ready() -> void:
 	if !on_tree && damage_over_time:
@@ -29,10 +29,6 @@ func on_drag_finished() -> void:
 	.on_drag_finished()
 
 
-func on_interaction(obj: BaseCharacter) -> void:
-	if is_active && obj.is_active && (obj.type == GE.OBJS.DUCK || obj.type == GE.OBJS.CHICKEN) && is_dragging:
-		GameManager.DRAGGING_OBJECT = false;
-		queue_free();
 
 func on_clicked():
 	if !is_active: return
@@ -77,15 +73,7 @@ func kill():
 	is_active = false;
 	$Sprite.frame = 4;	
 	if spawn:
-		var obj: Node2D = spawn.instance()
-		obj.scale = Vector2(0.2, 0.2);
-		obj.position = position
-		get_parent().add_child(obj)
-		
-		var tween = get_tree().create_tween()
-		tween.tween_property(obj, "scale", Vector2(1, 1), 0.5)
-		
-		yield(tween, "finished")
+		GameManager.spawn(spawn, position);
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color(1,1,1,0), 0.5)
 	yield(tween, "finished")

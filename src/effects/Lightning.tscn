@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/effects/AutoRemove.gd" type="Script" id=1]
+[ext_resource path="res://sprites/effects/spark_06.png" type="Texture" id=2]
+
+[sub_resource type="GradientTexture" id=2]
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0.323864 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 90.0
+gravity = Vector3( 0, 30, 0 )
+initial_velocity = 30.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 10.0
+angle_random = 1.0
+scale = 0.2
+scale_curve = SubResource( 5 )
+color = Color( 0.137255, 0.231373, 1, 1 )
+color_ramp = SubResource( 2 )
+
+[node name="LightningEffect" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Particles2D" type="Particles2D" parent="."]
+amount = 3
+explosiveness = 1.0
+process_material = SubResource( 6 )
+texture = ExtResource( 2 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

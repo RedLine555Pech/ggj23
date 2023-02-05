@@ -18,6 +18,7 @@ func new_target_point():
 	target_point = get_global_mouse_position() + Vector2(x, y)
 		
 func on_clicked():
+	EffectManager.instantiateEffect('FlyDie', global_position)
 	queue_free()
 	
 func on_drag_started():

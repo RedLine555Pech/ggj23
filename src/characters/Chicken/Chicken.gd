@@ -1,5 +1,7 @@
 extends BaseMoving
 
+export var spawn: String
+
 func on_drag_started() -> void:
 	if !is_active:
 		return
@@ -20,7 +22,13 @@ func on_interaction(obj: BaseCharacter) -> void:
 		can_move = false;
 		$IdleTimer.stop();
 		$AnimationPlayer.play("eyes_out");
+		GameManager.DRAGGING_OBJECT = false;
+		obj.on_drag_finished()
+		obj.is_active = false;
+		obj.hide();
 		yield(get_tree().create_timer(1), "timeout");
+		obj.is_active = true;
+		obj.show();
 		$AnimationPlayer.play("idle");
 		is_active = true;
 		can_move = true;
@@ -30,3 +38,8 @@ func on_stop():
 	
 func on_move():
 	$AnimationPlayer.play("walk");
+
+
+func _on_EggTimer_timeout() -> void:
+	if is_active && spawn:
+		GameManager.spawn(spawn, position);

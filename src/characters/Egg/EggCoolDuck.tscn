@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/characters/Egg/EggDuck.tscn" type="PackedScene" id=1]
+
+[node name="EggCoolDuck" instance=ExtResource( 1 )]
+spawn = "CoolDuck"
