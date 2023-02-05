@@ -5,7 +5,7 @@ export var spawn: String
 func on_drag_started() -> void:
 	if !is_active:
 		return
-	AudioManager.play_sound("ChickenScream")
+#	AudioManager.play_sound("ChickenScream")
 	$AnimationPlayer.play("hang");
 	.on_drag_started()
 
