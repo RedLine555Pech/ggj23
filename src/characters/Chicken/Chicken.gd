@@ -5,6 +5,7 @@ export var spawn: String
 func on_drag_started() -> void:
 	if !is_active:
 		return
+	AudioManager.play_sound("ChickenScream")
 	$AnimationPlayer.play("hang");
 	.on_drag_started()
 
@@ -34,6 +35,7 @@ func on_interaction(obj: BaseCharacter) -> void:
 		can_move = true;
 
 func on_stop():
+	AudioManager.play_sound("Chicken")
 	$AnimationPlayer.play("idle");
 	
 func on_move():

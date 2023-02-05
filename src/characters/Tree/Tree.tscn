@@ -52,8 +52,6 @@ centered = false
 
 [node name="Hoverable" parent="." instance=ExtResource( 4 )]
 position = Vector2( 75, 367 )
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hoverable"]
 shape = SubResource( 1 )

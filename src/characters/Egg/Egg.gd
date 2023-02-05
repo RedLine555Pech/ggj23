@@ -62,6 +62,7 @@ func fall():
 func damage():
 	health = clamp(health - 1, 0, health)
 	print("Damaged" + str(health))
+	AudioManager.play_sound("EggDamage")	
 	$Sprite.frame += 1;
 	$AnimationPlayer.play("shake");
 	if health <= 0:
@@ -71,6 +72,7 @@ func damage():
 func kill():
 	print("Killed")
 	is_active = false;
+	AudioManager.play_sound("EggKill")
 	$Sprite.frame = 4;	
 	if spawn:
 		GameManager.spawn(spawn, position);
