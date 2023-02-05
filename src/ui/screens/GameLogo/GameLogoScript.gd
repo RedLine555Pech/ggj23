@@ -14,4 +14,4 @@ func next() -> void:
 	if transiting:
 		return 
 	transiting = true;
-	TransitionScreen.transitionToScene("res://scenes/Main.tscn");
+	TransitionScreen.transitionToScene("res://src/ui/UI.tscn");

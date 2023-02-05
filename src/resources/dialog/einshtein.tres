@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/resources/dialog/dialogResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 0
+question = "Imagination is more important than knowledge. For knowledge is limited to all we now know and understand, while imagination embraces the entire world, and all there ever will be to know and understand. (c) Albert Einstein"
+answers = [ "Play!" ]

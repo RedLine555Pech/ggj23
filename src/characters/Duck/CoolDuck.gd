@@ -37,7 +37,7 @@ func knife_play():
 		can_move = false;
 		$IdleTimer.stop();
 		$AnimationPlayer.play("flag");
-		yield(get_tree().create_timer(0.4), "timeout");
+		yield(get_tree().create_timer(1), "timeout");
 		GameManager.spawn('Flag', global_position + Vector2(80, 0))
 		can_move = true;		
 		$AnimationPlayer.play("idle");

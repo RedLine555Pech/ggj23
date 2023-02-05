@@ -64,16 +64,18 @@ script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 margin_right = 708.0
-margin_bottom = 64.0
+margin_bottom = 198.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Some test text"
+text = "Some test text kjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjh"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 68.0
+margin_top = 202.0
 margin_right = 708.0
-margin_bottom = 138.0
+margin_bottom = 272.0
 custom_constants/separation = 20
 
 [node name="Button" parent="HBoxContainer" instance=ExtResource( 3 )]

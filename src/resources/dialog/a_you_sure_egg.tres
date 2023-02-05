@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-id = 1
+id = 2
 question = "A you sure first was the egg?"
 answers = [ "Of course", "No, first was chicken" ]

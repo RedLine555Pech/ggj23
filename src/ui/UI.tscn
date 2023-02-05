@@ -1,15 +1,30 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Dialog/Dialogue.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/ui.gd" type="Script" id=2]
 [ext_resource path="res://src/resources/dialog/egg_chicken_question.tres" type="Resource" id=3]
-[ext_resource path="res://src/resources/dialog/a_you_sure.tres" type="Resource" id=4]
+[ext_resource path="res://src/resources/dialog/a_you_sure_egg.tres" type="Resource" id=4]
+[ext_resource path="res://src/resources/dialog/a_you_sure_chick.tres" type="Resource" id=5]
+[ext_resource path="res://src/resources/dialog/einshtein.tres" type="Resource" id=6]
+[ext_resource path="res://src/resources/dialog/wrong.tres" type="Resource" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 dialog = NodePath("Dialog")
-dialogues = [ ExtResource( 3 ), ExtResource( 4 ) ]
+dialogues = [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ) ]
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
 
 [node name="Dialog" parent="." instance=ExtResource( 1 )]
+margin_left = -663.0
+margin_top = -185.0
+margin_right = 663.0
+margin_bottom = 87.0

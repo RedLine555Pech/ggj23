@@ -22,6 +22,7 @@ var prefabDistionary = {
 func _ready() -> void:
 	randomize()
 
+
 func spawn(name, pos):
 	var instance = prefabDistionary[name];
 	if instance:

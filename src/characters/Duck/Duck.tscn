@@ -70,7 +70,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=12]
 resource_name = "flag"
-length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1

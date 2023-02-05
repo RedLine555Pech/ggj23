@@ -17,8 +17,18 @@ func choosed(dialog_id: int, answer_id: int) -> void:
 	print("Dialog: " + str(dialog_id) + " Answer: " + str(answer_id))
 	
 	if dialog_id == 0:
+		next_dialog()		
+	elif dialog_id == 1:
 		if answer_id == 1:
 			next_dialog()
+		elif answer_id == 0:
+			next_dialog(2)
+	elif dialog_id == 2:
+		next_dialog(2);
+	elif dialog_id == 3:
+		next_dialog();		
+	elif dialog_id == 4:
+		TransitionScreen.transitionToScene("res://scenes/Main.tscn");
 	
 
 func next_dialog(step: int = 1) -> void:
