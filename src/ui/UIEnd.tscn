@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Dialog/Dialogue.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/ui/uiend.gd" type="Script" id=2]
+[ext_resource path="res://src/resources/dialog/end_dialog.tres" type="Resource" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+dialog = NodePath("Dialog")
+dialogues = [ ExtResource( 3 ) ]
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Dialog" parent="." instance=ExtResource( 1 )]
+margin_left = -663.0
+margin_top = -185.0
+margin_right = 663.0
+margin_bottom = 87.0

@@ -11,3 +11,6 @@ spawn = "EggDuck"
 
 [node name="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource( 3 )
+
+[node name="EggTimer" parent="." index="7"]
+one_shot = true

@@ -43,6 +43,7 @@ tracks/0/keys = {
 [node name="Tree" type="Node2D"]
 position = Vector2( -3, 0 )
 script = ExtResource( 3 )
+is_blackhole_immune = true
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1, 0 )

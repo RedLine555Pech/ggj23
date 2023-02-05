@@ -322,7 +322,6 @@ anims/walk = SubResource( 9 )
 
 [node name="EggTimer" type="Timer" parent="."]
 wait_time = 15.0
-one_shot = true
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

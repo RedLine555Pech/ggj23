@@ -7,6 +7,8 @@ const BOTTOM_BORDER = 880;
 
 var DRAGGING_OBJECT = false;
 
+signal blackhole_spawned(pos);
+
 var prefabDistionary = {
 	'Fly': preload("res://src/characters/Fly/Fly.tscn"),
 	'EggChicken': preload("res://src/characters/Egg/Egg.tscn"),
@@ -17,13 +19,14 @@ var prefabDistionary = {
 	'Duck': preload("res://src/characters/Duck/Duck.tscn"),
 	'CoolDuck': preload("res://src/characters/Duck/CoolDuck.tscn"),
 	'Flag': preload("res://src/characters/Flag/Flag.tscn"),
+	'BlackHole': preload("res://src/characters/BlackHole/BlackHole.tscn"),
 }
 
 func _ready() -> void:
 	randomize()
 
 
-func spawn(name, pos):
+func spawn(name, pos, scale_tween = true):
 	var instance = prefabDistionary[name];
 	if instance:
 		var obj: Node2D = instance.instance()
@@ -31,7 +34,8 @@ func spawn(name, pos):
 		obj.position = pos
 		get_node("/root/World").add_child(obj)
 		
-		var tween = get_tree().create_tween()
-		tween.tween_property(obj, "scale", Vector2(1, 1), 0.5)
-		
-		yield(tween, "finished")
+		if scale_tween:
+			var tween = get_tree().create_tween()
+			tween.tween_property(obj, "scale", Vector2(1, 1), 0.5)
+			
+			yield(tween, "finished")

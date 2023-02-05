@@ -4,3 +4,6 @@
 
 [node name="ChickenFirst" instance=ExtResource( 1 )]
 spawn = "EggCoolDuck"
+
+[node name="EggTimer" parent="." index="6"]
+one_shot = true
