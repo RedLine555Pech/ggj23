@@ -7,3 +7,6 @@
 script = ExtResource( 2 )
 type = 0
 spawn = "EggDuck"
+
+[node name="EggTimer" parent="." index="7"]
+one_shot = true
